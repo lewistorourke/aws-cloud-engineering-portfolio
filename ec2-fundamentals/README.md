@@ -156,6 +156,122 @@ The private IP is used for internal communication within the AWS network.
 
 Successfully launched an Amazon EC2 instance, configured security groups, generated SSH credentials, and used EC2 User Data to automatically deploy a web server accessible over the internet.
 
+## Security Groups Hands-On
+
+### Project Overview
+
+In this hands-on project, I explored Amazon EC2 Security Groups and examined how they control inbound and outbound network traffic to EC2 instances.
+
+This exercise demonstrated how security groups act as virtual firewalls, allowing administrators to define which ports and protocols are permitted to access cloud resources.
+
+---
+
+## Objectives
+
+- Navigate to the Security Groups section in the EC2 console
+- Review inbound and outbound rules
+- Understand how port-based access control works
+- Configure SSH and HTTP access rules
+- Learn how `0.0.0.0/0` affects network exposure
+- Troubleshoot connectivity issues caused by restrictive rules
+
+---
+
+## AWS Services Used
+
+- Amazon Elastic Compute Cloud (EC2)
+- Security Groups
+
+---
+
+## Practical Tasks Completed
+
+### Accessed the Security Group
+
+Navigated to:
+
+- EC2 Console
+- Network & Security
+- Security Groups
+
+Selected the security group associated with the EC2 instance (`launch-wizard-1`).
+
+### Reviewed Inbound Rules
+
+Examined the configured inbound rules:
+
+- SSH (TCP Port 22) from `0.0.0.0/0`
+- HTTP (TCP Port 80) from `0.0.0.0/0`
+
+These rules allow:
+
+- SSH access from any IP address on the internet
+- Web traffic from any IP address on the internet
+
+### Understood `0.0.0.0/0`
+
+Learned that `0.0.0.0/0` represents all IPv4 addresses.
+
+This means any device on the internet can attempt to connect to the specified ports.
+
+### Reviewed Outbound Rules
+
+Observed that security groups also contain outbound rules that control traffic leaving the EC2 instance.
+
+By default, AWS allows all outbound traffic.
+
+### Troubleshot Connection Timeouts
+
+Learned that if SSH or HTTP connections time out, the security group configuration should be checked to confirm that the required ports are open.
+
+---
+
+## Security Concepts Demonstrated
+
+- Security Groups as Stateful Firewalls
+- Port-Based Access Control
+- Inbound and Outbound Traffic Filtering
+- Public Internet Exposure
+- Principle of Least Privilege
+- Network Troubleshooting
+
+---
+
+## Key Lessons Learned
+
+- Security groups act as virtual firewalls for EC2 instances.
+- Inbound rules control which traffic is allowed to reach an instance.
+- Outbound rules control which traffic is allowed to leave an instance.
+- `0.0.0.0/0` permits access from anywhere on the internet.
+- Misconfigured security groups are a common cause of connection failures.
+- Access should be restricted to trusted IP addresses whenever possible.
+
+---
+
+## Skills Demonstrated
+
+- Security Group Configuration
+- Network Access Control
+- Port and Protocol Management
+- Connectivity Troubleshooting
+- AWS Networking Fundamentals
+- Infrastructure Security
+
+---
+
+## Screenshots
+
+### Security Group Inbound Rules
+![Security Group Inbound Rules](screenshots/security-group-inbound-rules.png)
+
+---
+
+## Outcome
+
+Successfully reviewed and analysed EC2 security group rules, including SSH and HTTP access, and gained practical understanding of how AWS controls network connectivity to cloud resources.
+
+---
+
 This project demonstrated the ability to provision and configure cloud infrastructure rapidly using AWS.
 
 ---
