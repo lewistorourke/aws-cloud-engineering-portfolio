@@ -170,6 +170,4 @@ Successfully created and configured Cluster, Spread, and Partition Placement Gro
 
 ---
 
-## CV Bullet Point
 
-- Configured Amazon EC2 Placement Groups using Cluster, Spread, and Partition strategies to optimise infrastructure for high performance, fault tolerance, and distributed workloads.
