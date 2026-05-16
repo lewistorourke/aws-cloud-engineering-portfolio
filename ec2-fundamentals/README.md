@@ -159,7 +159,3 @@ Successfully launched an Amazon EC2 instance, configured security groups, genera
 This project demonstrated the ability to provision and configure cloud infrastructure rapidly using AWS.
 
 ---
-
-## CV Bullet Point
-
-- Provisioned an Amazon EC2 instance using User Data to automate web server deployment, configured security groups, and managed SSH key-based access to demonstrate infrastructure provisioning and automation in AWS.
