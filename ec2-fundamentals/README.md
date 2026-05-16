@@ -275,3 +275,133 @@ Successfully reviewed and analysed EC2 security group rules, including SSH and H
 This project demonstrated the ability to provision and configure cloud infrastructure rapidly using AWS.
 
 ---
+
+## EC2 Instance Connect Hands-On
+
+### Project Overview
+
+In this hands-on project, I used Amazon EC2 Instance Connect to establish a secure shell (SSH) session to an Amazon Linux EC2 instance directly through the AWS Management Console.
+
+This exercise demonstrated an alternative to traditional SSH tools such as PuTTY, allowing secure browser-based access without manually specifying a private key file.
+
+---
+
+## Objectives
+
+- Connect to an EC2 instance using EC2 Instance Connect
+- Understand how browser-based SSH access works
+- Learn how AWS temporarily uploads SSH keys during connection
+- Verify the default username for Amazon Linux instances
+- Understand the dependency on SSH and port 22
+- Compare EC2 Instance Connect with traditional SSH tools
+
+---
+
+## AWS Services Used
+
+- Amazon Elastic Compute Cloud (EC2)
+- EC2 Instance Connect
+
+---
+
+## Practical Tasks Completed
+
+### Opened the EC2 Instance
+
+Navigated to:
+
+- EC2 Console
+- Instances
+- Selected the target EC2 instance
+- Clicked **Connect**
+
+### Used EC2 Instance Connect
+
+Selected the default connection option:
+
+- Connect using EC2 Instance Connect
+
+AWS automatically populated:
+
+- Default username (`ec2-user`)
+- Public IPv4 address
+
+### Established a Browser-Based SSH Session
+
+Connected directly to the instance using a web-based terminal inside the AWS Management Console.
+
+This provided full command-line access to the Amazon Linux instance.
+
+### Understood Temporary SSH Key Injection
+
+Learned that EC2 Instance Connect temporarily uploads an SSH public key to the instance during the connection process.
+
+This removes the need to manually specify a `.pem` or `.ppk` file.
+
+### Verified SSH Dependency
+
+Confirmed that EC2 Instance Connect still relies on the SSH service running on the EC2 instance.
+
+### Verified Port 22 Requirement
+
+Confirmed that TCP port 22 must be allowed in the associated security group.
+
+If port 22 is blocked or removed, EC2 Instance Connect cannot establish a session.
+
+### Compared with Traditional SSH Tools
+
+Recognised that EC2 Instance Connect provides the same functionality as tools such as:
+
+- PuTTY
+- OpenSSH
+
+but with a simpler browser-based experience.
+
+---
+
+## Security Concepts Demonstrated
+
+- Secure Shell (SSH)
+- Temporary Key Injection
+- Browser-Based Secure Access
+- Security Group Access Control
+- Port 22 Connectivity
+- Key-Based Authentication
+
+---
+
+## Key Lessons Learned
+
+- EC2 Instance Connect offers a convenient alternative to PuTTY and OpenSSH.
+- AWS temporarily injects an SSH public key during connection.
+- No local private key selection is required when using the browser-based terminal.
+- SSH must be running on the instance for connections to succeed.
+- Port 22 must be open in the security group.
+- Browser-based access simplifies administration while still using standard SSH security.
+
+---
+
+## Skills Demonstrated
+
+- EC2 Remote Access
+- Browser-Based SSH Connectivity
+- Security Group Validation
+- SSH Troubleshooting
+- Linux Server Administration
+- AWS Console Operations
+
+---
+
+## Screenshots
+
+### EC2 Instance Connect Terminal
+![EC2 Instance Connect Terminal](screenshots/ec2-instance-connect-terminal.png)
+
+---
+
+## Outcome
+
+Successfully connected to an Amazon Linux EC2 instance using EC2 Instance Connect and confirmed that AWS can provide secure browser-based SSH access without manually specifying a private key file.
+
+---
+
