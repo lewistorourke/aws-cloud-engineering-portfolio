@@ -125,6 +125,118 @@ By completing this project, I gained practical experience configuring IAM users,
 
 ---
 
-## CV Bullet Point
+## IAM MFA Hands-On
 
-Configured AWS IAM users, groups, and managed policies to implement least privilege access controls, analysed policy JSON documents, and created custom policies using both the Visual and JSON editors.
+### Project Overview
+
+In this hands-on project, I configured AWS Identity and Access Management (IAM) password policies and enabled Multi-Factor Authentication (MFA) to strengthen account security.
+
+This exercise demonstrated how AWS can enforce strong passwords and require an additional authentication factor, significantly reducing the risk of unauthorised access to privileged accounts.
+
+---
+
+## Objectives
+
+- Review AWS default password policy settings
+- Configure a custom password policy
+- Understand password complexity requirements
+- Enable Multi-Factor Authentication (MFA) for the root account
+- Configure a virtual authenticator application
+- Verify login using time-based one-time passcodes (TOTP)
+
+---
+
+## AWS Services Used
+
+- AWS Identity and Access Management (IAM)
+
+---
+
+## Practical Tasks Completed
+
+### Reviewed Default Password Policy
+
+Examined the AWS-managed default password policy, which includes:
+
+- Minimum password length of 8 characters
+- Requirement for uppercase letters
+- Requirement for lowercase letters
+- Requirement for numbers
+- Requirement for non-alphanumeric characters
+- Passwords never expire by default
+
+### Configured Custom Password Policy
+
+Explored custom password policy settings, including:
+
+- Minimum password length
+- Password expiration
+- Allowing users to change their own passwords
+- Preventing password reuse
+
+### Enabled Multi-Factor Authentication (MFA)
+
+Configured MFA for the AWS root account by:
+
+- Navigating to Security Credentials
+- Selecting Assign MFA Device
+- Choosing a Virtual Authenticator App
+- Scanning the QR code using an authenticator application
+- Entering two consecutive one-time passcodes
+
+### Verified MFA Authentication
+
+Confirmed that future logins required both:
+
+- Username and password
+- Time-based one-time passcode (TOTP)
+
+---
+
+## Security Concepts Demonstrated
+
+- Multi-Factor Authentication (MFA)
+- Defense in Depth
+- Strong Password Policies
+- Root Account Protection
+- Time-Based One-Time Passwords (TOTP)
+
+---
+
+## Key Lessons Learned
+
+- MFA provides an additional layer of security beyond passwords alone.
+- The AWS root account should always have MFA enabled.
+- Custom password policies help enforce strong credential standards.
+- Virtual authenticator applications are a simple and effective MFA solution.
+- Password complexity requirements reduce the likelihood of credential compromise.
+
+---
+
+## Skills Demonstrated
+
+- IAM Security Configuration
+- Password Policy Management
+- MFA Setup and Verification
+- Root Account Hardening
+- Security Best Practices
+
+---
+
+## Screenshots
+
+### Default Password Policy
+![Default Password Policy](screenshots/default-password-policy.png)
+
+### Custom Password Policy
+![Custom Password Policy](screenshots/custom-password-policy.png)
+
+---
+
+## Outcome
+
+Successfully configured AWS password policies and enabled Multi-Factor Authentication to improve account security and protect privileged access.
+
+---
+
+
