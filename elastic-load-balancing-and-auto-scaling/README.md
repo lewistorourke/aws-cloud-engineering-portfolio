@@ -130,6 +130,150 @@ This setting determines whether the volume is automatically deleted when the EC2
 ---
 ## Outcome
 
-Successfully created and attached an additional Amazon EBS volume to an EC2 instance and reviewed how storage persists independently of compute resources.
+## Amazon EBS Snapshots Hands-On
+
+### Project Overview
+
+In this hands-on project, I created Amazon EBS Snapshots to back up EBS volumes, copied snapshots to other AWS Regions, restored volumes from snapshots, and configured the AWS Recycle Bin to protect snapshots from accidental deletion.
+
+This exercise demonstrated how AWS provides durable, point-in-time backups and disaster recovery capabilities for EC2 storage.
+
+---
+
+## Objectives
+
+- Create point-in-time EBS snapshots
+- View and manage snapshots in the AWS Console
+- Copy snapshots to another AWS Region
+- Restore new EBS volumes from snapshots
+- Configure AWS Recycle Bin retention rules
+- Recover accidentally deleted snapshots
+
+---
+
+## AWS Services Used
+
+- Amazon Elastic Block Store (EBS)
+- Amazon EBS Snapshots
+- AWS Recycle Bin
+- Amazon EC2
+
+---
+
+## Practical Tasks Completed
+
+### Created an EBS Snapshot
+
+Created a snapshot from an existing EBS volume by navigating to:
+
+- EC2 Console
+- Volumes
+- Select Volume
+- Actions
+- Create Snapshot
+
+This generated a point-in-time backup of the selected EBS volume.
+
+### Viewed Existing Snapshots
+
+Navigated to:
+
+- EC2 Console
+- Elastic Block Store
+- Snapshots
+
+Reviewed all snapshots stored in the AWS account.
+
+### Copied a Snapshot to Another Region
+
+Selected a snapshot and chose:
+
+- Actions
+- Copy Snapshot
+
+Specified a destination AWS Region.
+
+This is useful for:
+
+- Disaster recovery
+- Geographic redundancy
+- Cross-region backups
+
+### Restored a Volume from a Snapshot
+
+Created a new EBS volume from a snapshot by selecting:
+
+- Snapshots
+- Select Snapshot
+- Actions
+- Create Volume from Snapshot
+
+Configured:
+
+- Volume type
+- Size
+- Availability Zone
+
+Verified that the restored volume appeared in the Volumes section.
+
+### Configured AWS Recycle Bin
+
+Navigated to:
+
+- AWS Recycle Bin
+
+Created a retention rule to protect EBS snapshots from permanent deletion.
+
+Configured:
+
+- Resource type: EBS Snapshots
+- Retention period: Custom duration
+
+### Deleted and Recovered a Snapshot
+
+Deleted a snapshot and confirmed that it was moved to the Recycle Bin.
+
+Recovered the snapshot from the Recycle Bin, demonstrating protection against accidental deletion.
+
+---
+
+## Backup and Recovery Concepts Demonstrated
+
+- Point-in-Time Backups
+- Snapshot-Based Recovery
+- Cross-Region Replication
+- Disaster Recovery
+- Data Retention Policies
+- Accidental Deletion Protection
+
+---
+
+## Key Lessons Learned
+
+- EBS snapshots provide incremental point-in-time backups of EBS volumes.
+- Snapshots can be copied to other AWS Regions for disaster recovery.
+- New EBS volumes can be restored directly from snapshots.
+- AWS Recycle Bin protects snapshots from accidental deletion.
+- Retention rules provide additional backup safety and governance.
+- Snapshot-based backups are a core component of resilient AWS architectures.
+
+---
+
+## Skills Demonstrated
+
+- EBS Snapshot Creation
+- Cross-Region Backup Management
+- Volume Restoration
+- Disaster Recovery Planning
+- AWS Recycle Bin Configuration
+- Data Protection Administration
+
+---
+## Outcome
+
+Successfully created EBS snapshots, copied them across regions, restored new volumes, and configured AWS Recycle Bin to protect backups from accidental deletion.
+
+---
+
 
 ---
