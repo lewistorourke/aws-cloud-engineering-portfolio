@@ -274,6 +274,128 @@ Recovered the snapshot from the Recycle Bin, demonstrating protection against ac
 Successfully created EBS snapshots, copied them across regions, restored new volumes, and configured AWS Recycle Bin to protect backups from accidental deletion.
 
 ---
+## Amazon Machine Images (AMI) Hands-On
+
+### Project Overview
+
+In this hands-on project, I created a custom Amazon Machine Image (AMI) from an existing EC2 instance and used it to launch new EC2 instances with the same operating system, applications, and configuration.
+
+This exercise demonstrated how AMIs can be used to rapidly deploy preconfigured servers, significantly reducing setup time and ensuring consistency across environments.
+
+---
+
+## Objectives
+
+- Launch and configure an EC2 instance
+- Create a custom AMI from the configured instance
+- View custom AMIs in the AWS Console
+- Launch new EC2 instances from the custom AMI
+- Understand how AMIs speed up deployments
+- Reuse application and operating system configurations
+
+---
+
+## AWS Services Used
+
+- Amazon Elastic Compute Cloud (EC2)
+- Amazon Machine Images (AMI)
+- Amazon Elastic Block Store (EBS)
+
+---
+
+## Practical Tasks Completed
+
+### Launched and Configured an EC2 Instance
+
+Created an EC2 instance and configured:
+
+- Key pair
+- Security groups
+- Storage
+- User data scripts
+- Installed applications
+
+This instance served as the base system for the custom AMI.
+
+### Created a Custom AMI
+
+Created an image from the configured EC2 instance by navigating to:
+
+- EC2 Console
+- Instances
+- Select Instance
+- Image and Templates
+- Create Image
+
+Provided a name and description, then initiated image creation.
+
+### Verified AMI Creation
+
+Navigated to:
+
+- EC2 Console
+- Images
+- AMIs
+
+Confirmed the newly created AMI appeared in the **My AMIs** section after reaching the `Available` state.
+
+### Launched a New Instance from the AMI
+
+Created a new EC2 instance and selected the custom image under:
+
+- Application and OS Images
+- My AMIs
+
+The new instance inherited:
+
+- Operating system configuration
+- Installed software
+- Security settings
+- Preconfigured user data and applications
+
+### Observed Faster Deployment
+
+Verified that launching from the AMI was significantly faster than rebuilding the server manually, as all customisations were already included.
+
+---
+
+## Infrastructure Concepts Demonstrated
+
+- Golden Images
+- Immutable Infrastructure
+- Rapid Provisioning
+- Configuration Standardisation
+- Pre-Baked Server Templates
+- Scalable Deployments
+
+---
+
+## Key Lessons Learned
+
+- AMIs are reusable templates containing the operating system and configuration of an EC2 instance.
+- Custom AMIs enable consistent deployments across environments.
+- Applications and settings are preserved in the image.
+- Launching from an AMI is much faster than manually configuring a new server.
+- AMIs form the foundation of Auto Scaling Groups and automated infrastructure.
+
+---
+
+## Skills Demonstrated
+
+- EC2 Instance Configuration
+- AMI Creation and Management
+- Infrastructure Standardisation
+- Rapid Server Deployment
+- Immutable Infrastructure Concepts
+- AWS Automation Foundations
+
+---
+
+## Outcome
+
+Successfully created a custom Amazon Machine Image (AMI) from a configured EC2 instance and used it to launch new preconfigured instances, demonstrating rapid and consistent server deployment.
+
+---
 
 
 ---
