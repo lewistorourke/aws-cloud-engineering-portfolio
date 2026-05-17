@@ -660,14 +660,6 @@ After updating the security group, target health changed to healthy.
 - AWS Load Balancing
 
 ---
-
-## Screenshots
-
-### NLB Security Group Rules
-![NLB Security Group Rules](screenshots/nlb-security-group-rules.png)
-
----
-
 ## Outcome
 
 Successfully created a Network Load Balancer, registered EC2 instances, and resolved health check failures by updating security group rules to allow HTTP traffic.
