@@ -535,7 +535,143 @@ Reviewed the EFS Network tab and confirmed that security groups were attached to
 Successfully created and configured Amazon EFS, enabled lifecycle policies for automated cost optimisation, and mounted the file system to EC2 instances to provide highly available shared storage.
 
 ---
+## Network Load Balancer (NLB) Hands-On
 
-## CV Bullet Point
+### Project Overview
+
+In this hands-on project, I created an AWS Network Load Balancer (NLB), configured a TCP target group, registered EC2 instances, and performed health checks to verify backend availability.
+
+This exercise demonstrated how NLBs operate at Layer 4 of the OSI model, providing extremely high-performance load balancing while preserving client source IP addresses.
+
+---
+
+## Objectives
+
+- Create a Network Load Balancer (NLB)
+- Configure listeners on TCP port 80
+- Create a target group
+- Register EC2 instances as targets
+- Configure HTTP health checks
+- Troubleshoot unhealthy targets
+- Update security groups to allow health check traffic
+
+---
+
+## AWS Services Used
+
+- Elastic Load Balancing (ELB)
+- Network Load Balancer (NLB)
+- Amazon EC2
+- Target Groups
+- Security Groups
+
+---
+
+## Practical Tasks Completed
+
+### Created a Network Load Balancer
+
+Created a new Network Load Balancer by navigating to:
+
+- EC2 Console
+- Load Balancers
+- Create Load Balancer
+- Network Load Balancer
+
+Configured:
+
+- Internet-facing load balancer
+- Multiple Availability Zones
+- One subnet per Availability Zone
+- Static IPv4 addresses for each subnet
+
+### Attached Security Groups
+
+Associated a security group with the NLB to control inbound traffic.
+
+Configured rules to allow:
+
+- HTTP (TCP port 80)
+- SSH (TCP port 22) where required for administration
+
+### Created a Target Group
+
+Created a target group with the following settings:
+
+- Target type: Instances
+- Protocol: TCP
+- Port: 80
+- Health check protocol: HTTP
+
+### Registered EC2 Instances
+
+Added web server EC2 instances as targets in the target group.
+
+### Created the Load Balancer
+
+Attached the target group to the listener and completed the NLB creation process.
+
+### Monitored Target Health
+
+Reviewed the Target Group health status and observed that health checks initially reported targets as unhealthy.
+
+### Resolved Health Check Failures
+
+Identified that security group rules were preventing HTTP health check requests.
+
+Added an additional inbound rule to allow:
+
+- HTTP (TCP port 80) from the appropriate source
+
+After updating the security group, target health changed to healthy.
+
+---
+
+## Load Balancing Concepts Demonstrated
+
+- Layer 4 Load Balancing
+- Static IP Addresses
+- Target Groups
+- Health Checks
+- Security Group Troubleshooting
+- High Availability
+- Source IP Preservation
+
+---
+
+## Key Lessons Learned
+
+- Network Load Balancers operate at the transport layer (Layer 4).
+- NLBs provide one static IP address per Availability Zone.
+- Target groups define the backend instances that receive traffic.
+- Health checks determine whether targets are eligible to receive requests.
+- Security groups must allow health check traffic to avoid unhealthy targets.
+- NLBs are designed for high throughput and low latency workloads.
+
+---
+
+## Skills Demonstrated
+
+- Network Load Balancer Configuration
+- Target Group Creation
+- Health Check Troubleshooting
+- Security Group Management
+- High Availability Architecture
+- AWS Load Balancing
+
+---
+
+## Screenshots
+
+### NLB Security Group Rules
+![NLB Security Group Rules](screenshots/nlb-security-group-rules.png)
+
+---
+
+## Outcome
+
+Successfully created a Network Load Balancer, registered EC2 instances, and resolved health check failures by updating security group rules to allow HTTP traffic.
+
+---
 
 - Configured Amazon EFS with Elastic throughput and lifecycle policies, enabling highly available shared storage and automated cost optimisation across multiple EC2 instances.
