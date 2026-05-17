@@ -773,3 +773,123 @@ Successfully configured an HTTPS listener on an Application Load Balancer and at
 ---
 
 - Configured Amazon EFS with Elastic throughput and lifecycle policies, enabling highly available shared storage and automated cost optimisation across multiple EC2 instances.
+
+## Auto Scaling Groups Hands-On
+
+### Project Overview
+
+In this hands-on project, I created an AWS Auto Scaling Group (ASG) using a launch template and integrated it with an existing Application Load Balancer (ALB).
+
+This exercise demonstrated how AWS automatically launches and replaces EC2 instances to maintain application availability and scalability.
+
+---
+
+## Objectives
+
+- Create a launch template
+- Configure EC2 instance settings
+- Create an Auto Scaling Group
+- Select multiple Availability Zones
+- Attach the Auto Scaling Group to an existing load balancer
+- Enable ELB health checks
+- Monitor scaling activities
+
+---
+
+## AWS Services Used
+
+- Amazon EC2
+- EC2 Launch Templates
+- Auto Scaling Groups (ASG)
+- Application Load Balancer (ALB)
+- Elastic Load Balancing (ELB)
+
+---
+
+## Practical Tasks Completed
+
+### Removed Existing Instances
+
+Terminated previously created EC2 instances to prepare for automated instance management through Auto Scaling.
+
+### Created a Launch Template
+
+Created a reusable launch template containing:
+
+- Template name
+- Amazon Linux AMI
+- Instance type (`t2.micro`)
+- EC2 key pair
+- Existing security group
+- User data script to automatically configure the instance
+
+### Created an Auto Scaling Group
+
+Created an Auto Scaling Group using the launch template.
+
+Configured:
+
+- Multiple Availability Zones
+- Desired capacity
+- Minimum capacity
+- Maximum capacity
+
+### Enabled Load Balancing
+
+Attached the Auto Scaling Group to an existing Application Load Balancer.
+
+This ensured traffic would be distributed across automatically launched instances.
+
+### Enabled ELB Health Checks
+
+Configured the Auto Scaling Group to use Elastic Load Balancing health checks.
+
+If an instance failed health checks, AWS automatically terminated and replaced it.
+
+### Reviewed Group Activities
+
+Opened the Auto Scaling Group and monitored:
+
+- Launch events
+- Termination events
+- Health check replacements
+
+---
+
+## Scaling Concepts Demonstrated
+
+- Automated Instance Provisioning
+- Self-Healing Infrastructure
+- High Availability
+- Launch Templates
+- Health-Based Replacement
+- Horizontal Scaling
+
+---
+
+## Key Lessons Learned
+
+- Launch templates provide reusable EC2 configuration settings.
+- Auto Scaling Groups automatically maintain the desired number of instances.
+- ELB health checks allow AWS to detect and replace unhealthy instances.
+- Auto Scaling improves resilience by reducing manual intervention.
+- Integrating ASGs with load balancers provides scalable and fault-tolerant architectures.
+
+---
+
+## Skills Demonstrated
+
+- Launch Template Configuration
+- Auto Scaling Group Creation
+- Load Balancer Integration
+- Health Check Configuration
+- High Availability Architecture
+- Scalable Infrastructure Design
+
+---
+
+## Outcome
+
+Successfully created an Auto Scaling Group using a launch template, integrated it with an Application Load Balancer, and enabled automatic instance replacement based on health checks.
+
+---
