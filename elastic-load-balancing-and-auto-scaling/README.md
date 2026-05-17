@@ -893,3 +893,123 @@ Opened the Auto Scaling Group and monitored:
 Successfully created an Auto Scaling Group using a launch template, integrated it with an Application Load Balancer, and enabled automatic instance replacement based on health checks.
 
 ---
+## Auto Scaling Groups Scaling Policies Hands-On
+
+### Project Overview
+
+In this hands-on project, I configured scaling policies for an existing AWS Auto Scaling Group (ASG), focusing on dynamic scaling using target tracking policies based on CPU utilisation.
+
+This exercise demonstrated how AWS can automatically increase or decrease the number of EC2 instances in response to changing demand.
+
+---
+
+## Objectives
+
+- Review available Auto Scaling policy types
+- Explore scheduled scaling
+- Explore predictive scaling
+- Create a dynamic scaling policy
+- Configure target tracking based on CPU utilisation
+- Set a target CPU threshold
+- Configure instance warm-up time
+- Monitor policy creation and operation
+
+---
+
+## AWS Services Used
+
+- Amazon EC2 Auto Scaling
+- Amazon CloudWatch
+- Amazon EC2
+
+---
+
+## Practical Tasks Completed
+
+### Reviewed Scaling Policy Types
+
+Opened an existing Auto Scaling Group and explored the available scaling options:
+
+- Scheduled Scaling
+- Predictive Scaling
+- Dynamic Scaling
+
+### Explored Scheduled Scaling
+
+Reviewed scheduled actions, which allow capacity changes to occur automatically at predefined dates and times.
+
+### Explored Predictive Scaling
+
+Reviewed predictive scaling, which uses historical usage data and machine learning to forecast future demand.
+
+### Created a Dynamic Scaling Policy
+
+Created a target tracking scaling policy with the following configuration:
+
+- Policy type: Target Tracking Scaling
+- Metric type: Average CPU Utilisation
+- Target value: 50%
+- Instance warm-up time: 300 seconds
+
+### Enabled Automatic Capacity Adjustment
+
+Configured the Auto Scaling Group to automatically:
+
+- Launch additional EC2 instances when CPU utilisation exceeded the target threshold
+- Terminate excess instances when utilisation decreased
+
+### Verified Scaling Policy Creation
+
+Confirmed that the policy was enabled and configured to maintain the target CPU utilisation automatically.
+
+---
+
+## Scaling Concepts Demonstrated
+
+- Dynamic Scaling
+- Target Tracking Policies
+- Scheduled Scaling
+- Predictive Scaling
+- CPU-Based Scaling
+- Instance Warm-Up
+- Automatic Capacity Management
+
+---
+
+## Key Lessons Learned
+
+- Dynamic scaling automatically adjusts capacity based on real-time metrics.
+- Target tracking policies simplify scaling by maintaining a specified metric value.
+- Scheduled scaling is useful for predictable traffic patterns.
+- Predictive scaling uses historical trends to forecast future demand.
+- Warm-up periods prevent newly launched instances from affecting scaling decisions too early.
+- CloudWatch metrics drive scaling decisions automatically.
+
+---
+
+## Skills Demonstrated
+
+- Auto Scaling Policy Configuration
+- CloudWatch Metric Integration
+- CPU-Based Capacity Management
+- Dynamic Infrastructure Scaling
+- Performance Optimisation
+- AWS Automation
+
+---
+
+## Screenshots
+
+### Dynamic Scaling Policy Configuration
+![Dynamic Scaling Policy Configuration](screenshots/dynamic-scaling-policy-configuration.png)
+
+### Target Tracking Policy Summary
+![Target Tracking Policy Summary](screenshots/target-tracking-policy-summary.png)
+
+---
+
+## Outcome
+
+Successfully configured a target tracking scaling policy that automatically adjusted EC2 capacity to maintain a target average CPU utilisation.
+
+---
