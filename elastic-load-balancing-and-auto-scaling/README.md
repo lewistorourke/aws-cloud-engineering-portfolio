@@ -396,6 +396,146 @@ Verified that launching from the AMI was significantly faster than rebuilding th
 Successfully created a custom Amazon Machine Image (AMI) from a configured EC2 instance and used it to launch new preconfigured instances, demonstrating rapid and consistent server deployment.
 
 ---
+## Amazon Elastic File System (EFS) Hands-On
 
+### Project Overview
+
+In this hands-on project, I created an Amazon Elastic File System (EFS), configured lifecycle policies to automatically transition files to lower-cost storage classes, and mounted the file system to EC2 instances.
+
+This exercise demonstrated how EFS provides scalable, shared file storage that can be accessed simultaneously by multiple EC2 instances across multiple Availability Zones.
 
 ---
+
+## Objectives
+
+- Create an Amazon EFS file system
+- Configure lifecycle management policies
+- Select throughput and performance settings
+- Configure mount targets within a VPC
+- Associate security groups with EFS mount targets
+- Launch EC2 instances with EFS attached
+- Understand shared storage across multiple EC2 instances
+
+---
+
+## AWS Services Used
+
+- Amazon Elastic File System (EFS)
+- Amazon Elastic Compute Cloud (EC2)
+- Amazon Virtual Private Cloud (VPC)
+- Security Groups
+
+---
+
+## Practical Tasks Completed
+
+### Created an EFS File System
+
+Created a new file system by navigating to:
+
+- EFS Console
+- Create File System
+- Customise
+
+Configured:
+
+- File system type: Regional
+- Lifecycle management policies
+- Performance settings
+- Network settings
+
+### Configured Lifecycle Management
+
+Configured automatic storage transitions to reduce costs:
+
+- Transition to Infrequent Access (IA): 30 days since last access
+- Transition to Archive: 90 days since last access
+
+These settings automatically move infrequently accessed files to lower-cost storage classes.
+
+### Selected Throughput Settings
+
+Configured the following performance options:
+
+- Throughput mode: Enhanced
+- Throughput setting: Elastic (Recommended)
+
+This configuration automatically scales throughput based on workload demand and charges only for the throughput used.
+
+### Configured Network Access
+
+Selected:
+
+- Target VPC
+- Automatically created mount targets in multiple Availability Zones
+- Security groups allowing NFS access over port 2049
+
+### Created Mount Targets
+
+AWS automatically created mount targets in multiple Availability Zones to provide highly available access to the file system.
+
+### Launched EC2 Instances with EFS
+
+Created EC2 instances and configured them to mount the EFS file system.
+
+This allowed multiple instances to access the same shared storage concurrently.
+
+### Verified Security Group Associations
+
+Reviewed the EFS Network tab and confirmed that security groups were attached to each mount target.
+
+---
+
+## Storage Concepts Demonstrated
+
+- Shared File Storage
+- Managed NFS
+- Multi-AZ High Availability
+- Lifecycle Management
+- Elastic Throughput
+- Cost Optimisation
+- Centralised Storage
+
+---
+
+## Key Lessons Learned
+
+- Amazon EFS provides fully managed, scalable shared file storage.
+- Multiple EC2 instances can read and write to the same file system simultaneously.
+- Lifecycle policies reduce costs by moving cold data to IA and Archive storage classes.
+- Elastic throughput automatically scales based on workload demand.
+- Security groups control access to EFS using NFS on port 2049.
+- Regional EFS creates mount targets across multiple Availability Zones for resilience.
+
+---
+
+## Skills Demonstrated
+
+- EFS File System Creation
+- Lifecycle Policy Configuration
+- Shared Storage Architecture
+- Throughput Optimisation
+- Security Group Configuration
+- AWS Cost Optimisation
+
+---
+
+## Screenshots
+
+### EFS Throughput Settings
+![EFS Throughput Settings](screenshots/efs-throughput-settings.png)
+
+### EFS Lifecycle Management
+![EFS Lifecycle Management](screenshots/efs-lifecycle-management.png)
+
+---
+
+## Outcome
+
+Successfully created and configured Amazon EFS, enabled lifecycle policies for automated cost optimisation, and mounted the file system to EC2 instances to provide highly available shared storage.
+
+---
+
+## CV Bullet Point
+
+- Configured Amazon EFS with Elastic throughput and lifecycle policies, enabling highly available shared storage and automated cost optimisation across multiple EC2 instances.
