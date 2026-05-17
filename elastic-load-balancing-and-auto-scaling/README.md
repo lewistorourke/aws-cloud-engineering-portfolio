@@ -673,5 +673,111 @@ After updating the security group, target health changed to healthy.
 Successfully created a Network Load Balancer, registered EC2 instances, and resolved health check failures by updating security group rules to allow HTTP traffic.
 
 ---
+## Application Load Balancer (ALB) SSL Certificates Hands-On
+
+### Project Overview
+
+In this hands-on project, I configured HTTPS listeners on an Application Load Balancer (ALB) and explored how SSL/TLS certificates are used to encrypt traffic between clients and the load balancer.
+
+This exercise demonstrated how AWS Certificate Manager (ACM) integrates with Elastic Load Balancing to provide secure web traffic using HTTPS.
+
+---
+
+## Objectives
+
+- Review Application Load Balancer listeners
+- Add an HTTPS listener
+- Attach an SSL/TLS certificate
+- Configure secure listener settings
+- Forward encrypted traffic to target groups
+- Understand SSL termination
+
+---
+
+## AWS Services Used
+
+- Elastic Load Balancing (ELB)
+- Application Load Balancer (ALB)
+- AWS Certificate Manager (ACM)
+- Target Groups
+
+---
+
+## Practical Tasks Completed
+
+### Reviewed Existing Application Load Balancer
+
+Opened the Application Load Balancer and examined its current listener configuration.
+
+### Added a New HTTPS Listener
+
+Added an additional listener to the load balancer.
+
+Configured:
+
+- Protocol: HTTPS
+- Port: 443
+
+### Attached an SSL/TLS Certificate
+
+Selected an SSL/TLS certificate from AWS Certificate Manager (ACM) to enable encrypted communication.
+
+### Configured Secure Listener Settings
+
+Reviewed HTTPS listener options, including:
+
+- Security policies
+- Supported TLS versions
+- Cipher suites
+- Server Name Indication (SNI)
+
+### Configured Forwarding Rules
+
+Set the HTTPS listener to forward requests to a specified target group containing EC2 instances.
+
+### Implemented SSL Termination
+
+Configured the ALB to decrypt HTTPS traffic before forwarding requests to backend instances.
+
+---
+
+## Security Concepts Demonstrated
+
+- SSL/TLS Encryption
+- HTTPS
+- Certificate Management
+- SSL Termination
+- Secure Listener Configuration
+- Server Name Indication (SNI)
+
+---
+
+## Key Lessons Learned
+
+- HTTPS encrypts data in transit between clients and the load balancer.
+- SSL/TLS certificates verify server identity and enable secure connections.
+- AWS Certificate Manager simplifies certificate management.
+- Application Load Balancers can terminate SSL connections.
+- HTTPS listeners forward decrypted traffic to backend target groups.
+- Security policies control which TLS versions and ciphers are permitted.
+
+---
+
+## Skills Demonstrated
+
+- HTTPS Listener Configuration
+- SSL/TLS Certificate Attachment
+- AWS Certificate Manager Integration
+- Secure Load Balancer Configuration
+- TLS Policy Management
+- Application Security
+
+---
+
+## Outcome
+
+Successfully configured an HTTPS listener on an Application Load Balancer and attached an SSL/TLS certificate to enable secure encrypted web traffic.
+
+---
 
 - Configured Amazon EFS with Elastic throughput and lifecycle policies, enabling highly available shared storage and automated cost optimisation across multiple EC2 instances.
